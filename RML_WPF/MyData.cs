@@ -45,7 +45,8 @@ namespace RML_WPF
             // EF6-ban az egy-sok kapcsolatot a principal irányából konfigurálom
             modelBuilder.Entity<Person>()
                 .HasMany<Address>(p => p.Addresses)
-                .WithRequired(a => a.Person);
+                .WithRequired(a => a.Person)
+                .HasForeignKey(a => a.FI_Person);
             modelBuilder.Entity<Person>().ToTable("Person");
             #endregion
 

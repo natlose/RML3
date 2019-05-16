@@ -22,6 +22,9 @@
         <TextBox Text="{Binding Person.Mobile}" />
         <Label Content="Email" />
         <TextBox Text="{Binding Person.Email}" />
+        <Border Height="200">
+            <DataGrid ItemsSource="{Binding Person.Addresses}" />
+        </Border>
         <DockPanel LastChildFill="False">
             <Button Content="Előző" DockPanel.Dock="Left" Click="ElozoClick" />
             <Button Content="Következő" DockPanel.Dock="Left" Click="KovetkezoClick" />

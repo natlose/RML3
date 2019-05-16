@@ -16,7 +16,7 @@ namespace RML_WPF
         {
             using (MyData mydata = new MyData())
             {
-                list = new LinkedList<Person>(mydata.Persons.ToList());
+                list = new LinkedList<Person>(mydata.Persons.Include(nameof(Person.Addresses)).ToList());
                 Node = list.First;
             }
         }
