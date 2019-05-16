@@ -5,23 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RML_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" SizeToContent="WidthAndHeight" >
+        Title="MainWindow" SizeToContent="WidthAndHeight" Loaded="Window_Loaded">
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
     <StackPanel>
         <Label Content="Címek" />
-        <TextBox />
+        <TextBox Text="{Binding Person.Titles}" />
         <Label Content="Vezetéknév" />
-        <TextBox />
+        <TextBox Text="{Binding Person.FirstName}" />
         <Label Content="Keresztnév" />
-        <TextBox />
+        <TextBox Text="{Binding Person.LastName}" />
         <Label Content="Telefon" />
-        <TextBox />
+        <TextBox Text="{Binding Person.Phone}" />
         <Label Content="Mobil" />
-        <TextBox />
+        <TextBox Text="{Binding Person.Mobile}" />
         <Label Content="Email" />
-        <TextBox />
+        <TextBox Text="{Binding Person.Email}" />
         <DockPanel LastChildFill="False">
-            <Button Content="Előző" DockPanel.Dock="Left" />
-            <Button Content="Következő" DockPanel.Dock="Left" />
+            <Button Content="Előző" DockPanel.Dock="Left" Click="ElozoClick" />
+            <Button Content="Következő" DockPanel.Dock="Left" Click="KovetkezoClick" />
             <Button x:Name="Cancel" Content="Kilép" DockPanel.Dock="Right" Click="Cancel_Click" />
         </DockPanel>
     </StackPanel>

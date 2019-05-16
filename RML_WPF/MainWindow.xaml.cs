@@ -29,5 +29,20 @@ namespace RML_WPF
         {
             Close();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            (DataContext as ViewModel).LoadData();
+        }
+
+        private void ElozoClick(object sender, RoutedEventArgs e)
+        {
+            (DataContext as ViewModel).Previous();
+        }
+
+        private void KovetkezoClick(object sender, RoutedEventArgs e)
+        {
+            (DataContext as ViewModel).Next();
+        }
     }
 }
