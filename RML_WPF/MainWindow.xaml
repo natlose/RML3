@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RML_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" SizeToContent="WidthAndHeight" >
+    <StackPanel>
+        <Label Content="Címek" />
+        <TextBox />
+        <Label Content="Vezetéknév" />
+        <TextBox />
+        <Label Content="Keresztnév" />
+        <TextBox />
+        <Label Content="Telefon" />
+        <TextBox />
+        <Label Content="Mobil" />
+        <TextBox />
+        <Label Content="Email" />
+        <TextBox />
+        <DockPanel LastChildFill="False">
+            <Button Content="Előző" DockPanel.Dock="Left" />
+            <Button Content="Következő" DockPanel.Dock="Left" />
+            <Button x:Name="Cancel" Content="Kilép" DockPanel.Dock="Right" Click="Cancel_Click" />
+        </DockPanel>
+    </StackPanel>
 </Window>
