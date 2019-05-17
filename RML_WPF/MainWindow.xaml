@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RML_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" SizeToContent="WidthAndHeight" Loaded="Window_Loaded">
+        Title="MainWindow" SizeToContent="Height" Width="600" Loaded="Window_Loaded">
     <Window.DataContext>
         <local:ViewModel />
     </Window.DataContext>
@@ -26,8 +26,8 @@
             <DataGrid ItemsSource="{Binding Person.Addresses}" />
         </Border>
         <DockPanel LastChildFill="False">
-            <Button Content="Előző" DockPanel.Dock="Left" Click="ElozoClick" />
-            <Button Content="Következő" DockPanel.Dock="Left" Click="KovetkezoClick" />
+            <Button Content="Előző" DockPanel.Dock="Left" Click="ElozoClick" IsEnabled="{Binding IsPreviousEnabled, Mode=OneWay}" />
+            <Button Content="Következő" DockPanel.Dock="Left" Click="KovetkezoClick" IsEnabled="{Binding IsNextEnabled, Mode=OneWay}" />
             <Button x:Name="Cancel" Content="Kilép" DockPanel.Dock="Right" Click="Cancel_Click" />
         </DockPanel>
     </StackPanel>

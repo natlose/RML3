@@ -28,8 +28,20 @@ namespace RML_WPF
             set
             {
                 node = value;
+                OnPropertyChanged(nameof(this.IsNextEnabled));
+                OnPropertyChanged(nameof(this.IsPreviousEnabled));
                 Person = node.Value;
             }
+        }
+
+        public bool IsNextEnabled
+        {
+            get { return Node?.Next != null; }
+        }
+
+        public bool IsPreviousEnabled
+        {
+            get { return Node?.Previous != null; }
         }
 
         public void Next()
